@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+{% include 'include/_navbar.html' %}
+
+<form class="w-50 m-auto mt-5 mb-5" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-danger" type="submit">Kaydet</button>
+</form>
+
+{% include 'include/_footer.html' %}
+
+{% endblock body %}
